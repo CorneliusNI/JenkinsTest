@@ -1,20 +1,13 @@
 pipeline {
     agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Build'
+    
+    stages {  
+        stage ("build") {
+            tools {
+               jdk "jdk-1.8.0_181"
             }
-        }
-        stage('Test') {
             steps {
-                echo 'Test'
-            }
-        }
-        stage('Integrate') {
-            steps {
-                echo 'Integrate'
+                sh 'java -version'
             }
         }
     }
